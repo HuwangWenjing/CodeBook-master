@@ -128,9 +128,9 @@ public class MainActivity extends AppCompatActivity {
         show_lv.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-                menu.setHeaderTitle("Please Choose");
-                menu.add(0,0,0,"delete").setOnMenuItemClickListener(mOnMenuItemClickListener);
-                menu.add(0,1,0,"edit").setOnMenuItemClickListener(mOnMenuItemClickListener);
+                menu.setHeaderTitle("请选择操作：");
+                menu.add(0,0,0,"删除").setOnMenuItemClickListener(mOnMenuItemClickListener);
+                menu.add(0,1,0,"编辑").setOnMenuItemClickListener(mOnMenuItemClickListener);
             }
         });
         //query the database and get the record

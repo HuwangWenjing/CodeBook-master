@@ -34,7 +34,7 @@ public class SignInActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(SignInActivity.this, "sign fault", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, "登录发生错误，请重新输入", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CodeBook-master.iml" filepath="$PROJECT_DIR$/CodeBook-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reminding-CodeBook-master.iml" filepath="$PROJECT_DIR$/reminding-CodeBook-master.iml" />
     </modules>
   </component>
 </project>
