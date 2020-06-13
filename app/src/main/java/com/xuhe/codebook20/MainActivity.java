@@ -29,7 +29,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView show_lv;
+    private ListView show;
     List<Data> list = new ArrayList<>();
     private MyDatabaseHelper dbHelper;
     private SQLiteDatabase db;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private String delete_content;
     private String edit_title;
     private String edit_time;
-    private FloatingActionButton fab;
+    //private FloatingActionButton fab;
     private MenuItem.OnMenuItemClickListener mOnMenuItemClickListener = new MenuItem.OnMenuItemClickListener() {
         @Override
         public boolean onMenuItemClick(MenuItem item) {
@@ -91,17 +91,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         dbHelper = new MyDatabaseHelper(this, "db_bwl", null, 1);
-        show_lv = (ListView) findViewById(R.id.content);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent addIntent = new Intent(MainActivity.this,AddActivity.class);
-                startActivityForResult(addIntent,1);
-            }
-        });
+        show = (ListView) findViewById(R.id.content);
+//        fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent addIntent = new Intent(MainActivity.this,AddActivity.class);
+//                startActivityForResult(addIntent,1);
+//            }
+//        });
         //点击事件
-        show_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        show.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //长按事件
-        show_lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        show.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        show_lv.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+        show.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
                 menu.setHeaderTitle("请选择操作：");
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         }else {
             adapter.notifyDataSetChanged();
         }
-        show_lv.setAdapter(adapter);
+        show.setAdapter(adapter);
     }
 
     @Override
